@@ -163,4 +163,72 @@
     font-size: 0.55rem;
     letter-spacing: 0.25em;
     color: rgba(255, 255, 255, 0.12);
+    text-align: center;
+    padding: 0 1rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .brand {
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .brandRed,
+    .brandGold {
+        font-size: 1.3rem;
+    }
+
+    .pct {
+        font-size: clamp(5rem, 16vw, 10rem);
+    }
+
+    .center {
+        gap: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand {
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .brandRed,
+    .brandGold {
+        font-size: 1.1rem;
+    }
+
+    .pct {
+        font-size: clamp(4rem, 14vw, 6rem);
+    }
+
+    .sym {
+        font-size: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .center {
+        gap: 1rem;
+        width: min(500px, 92vw);
+    }
+
+    .label {
+        font-size: 0.5rem;
+        letter-spacing: 0.3em;
+    }
+
+    .sub {
+        font-size: 0.5rem;
+        letter-spacing: 0.2em;
+    }
+
+    .footer {
+        bottom: 1rem;
+        font-size: 0.45rem;
+    }
+
+    .grid {
+        background-size: 50px 50px;
+    }
 }

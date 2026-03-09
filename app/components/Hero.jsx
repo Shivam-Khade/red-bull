@@ -72,16 +72,16 @@ export default function Hero() {
         const cw = window.innerWidth;
         const ch = window.innerHeight;
 
-        // Scale down the drawing area to 75% so the ENTIRE can is perfectly visible
-        const paddingFactor = 0.75;
+        // Scale the drawing area — larger on mobile so the can fills more of the viewport
+        const paddingFactor = cw < 480 ? 0.85 : cw < 768 ? 0.8 : 0.75;
         const paddedCw = cw * paddingFactor;
         const paddedCh = ch * paddingFactor;
 
         const ir = img.naturalWidth / img.naturalHeight;
         const cr = paddedCw / paddedCh;
 
-        // Small offset (40px) to dodge the navbar without pushing the can off the bottom edge
-        const navbarOffset = 40;
+        // Small offset to dodge the navbar
+        const navbarOffset = cw < 768 ? 20 : 40;
 
         let dw, dh, dx, dy;
         if (cr > ir) {

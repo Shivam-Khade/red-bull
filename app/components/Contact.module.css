@@ -199,11 +199,53 @@
 }
 
 @media (max-width: 768px) {
+    .section {
+        padding: 6rem 1.5rem;
+    }
+
     .formWrap {
         padding: 2rem 1.5rem;
     }
 
     .row {
         grid-template-columns: 1fr;
+    }
+
+    .sub {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 4rem 1rem;
+    }
+
+    .heading {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+
+    .sub {
+        font-size: 0.8rem;
+        max-width: 100%;
+    }
+
+    .formWrap {
+        padding: 1.5rem 1rem;
+        margin-top: 1rem;
+    }
+
+    .input {
+        font-size: 0.85rem;
+    }
+
+    .submitBtn {
+        align-self: stretch;
+        justify-content: center;
+        padding: 1rem 2rem;
+    }
+
+    .successIcon {
+        font-size: 3rem;
     }
 }

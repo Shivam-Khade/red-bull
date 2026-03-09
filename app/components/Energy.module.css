@@ -124,8 +124,51 @@
 }
 
 @media (max-width: 900px) {
+    .section {
+        padding: 6rem 1.5rem 8rem;
+    }
+
     .cardsWrap {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .card {
+        padding: 2.5rem 2rem;
+    }
+
+    .header {
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 4rem 1rem 6rem;
+    }
+
+    .header {
+        margin-bottom: 3rem;
+    }
+
+    .heading {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+    }
+
+    .sub {
+        font-size: 0.85rem;
+    }
+
+    .card {
+        padding: 2rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .cardTitle {
+        font-size: 2rem;
+    }
+
+    .cardDesc {
+        font-size: 0.8rem;
     }
 }

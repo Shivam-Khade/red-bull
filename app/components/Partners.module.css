@@ -104,3 +104,60 @@
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 0;
+    }
+
+    .header {
+        margin-bottom: 2.5rem;
+    }
+
+    .logoCard {
+        padding: 1.5rem 2rem;
+        min-width: 140px;
+    }
+
+    .logoText {
+        font-size: 1.4rem;
+    }
+
+    .logoName {
+        font-size: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 3rem 0;
+    }
+
+    .header {
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+
+    .heading {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .logoCard {
+        padding: 1.2rem 1.5rem;
+        min-width: 110px;
+    }
+
+    .logoText {
+        font-size: 1.1rem;
+    }
+
+    .logoName {
+        font-size: 0.45rem;
+        letter-spacing: 0.15em;
+    }
+
+    .marqueeWrapper {
+        margin: 1rem 0;
+    }
+}

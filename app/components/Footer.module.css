@@ -228,9 +228,56 @@
         padding: 3rem 1.5rem 2rem;
     }
 
+    .col {
+        align-items: center;
+        text-align: center;
+    }
+
+    .brandTagline {
+        max-width: 100%;
+    }
+
+    .colList {
+        align-items: center;
+    }
+
+    .newsletterForm {
+        width: 100%;
+        align-items: center;
+    }
+
+    .newsletterBtn {
+        align-self: center;
+    }
+
     .bottomBar {
         flex-direction: column;
         text-align: center;
         padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .legal {
+        font-size: 0.55rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        padding: 2.5rem 1rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .logoRed,
+    .logoGold {
+        font-size: 1.6rem;
+    }
+
+    .brandTagline {
+        font-size: 0.8rem;
+    }
+
+    .bottomBar {
+        padding: 1rem;
     }
 }

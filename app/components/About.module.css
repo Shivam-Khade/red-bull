@@ -204,4 +204,62 @@
     .statsRow {
         justify-content: center;
     }
+
+    .content {
+        text-align: center;
+        align-items: center;
+    }
+
+    .body {
+        max-width: 100%;
+    }
+
+    .ingredientsGrid {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 4rem 1rem;
+    }
+
+    .grid {
+        gap: 2rem;
+    }
+
+    .heading {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
+
+    .body {
+        font-size: 0.9rem;
+    }
+
+    .statsRow {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .stat {
+        min-width: 80px;
+    }
+
+    .statNum {
+        font-size: 1.5rem;
+    }
+
+    .statLabel {
+        font-size: 0.5rem;
+    }
+
+    .statDivider {
+        display: none;
+    }
+
+    .ingredient {
+        font-size: 0.55rem;
+        padding: 0.3rem 0.7rem;
+    }
 }
