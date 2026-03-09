@@ -1,0 +1,133 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(212, 168, 67, 0.1);
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.navScrolled {
+    background: rgba(0, 0, 0, 0.75);
+    border-bottom-color: rgba(212, 168, 67, 0.3);
+}
+
+.logo {
+    text-decoration: none;
+    display: flex;
+    gap: 0.3rem;
+    align-items: baseline;
+}
+
+.logoRed {
+    font-size: 1.8rem;
+    color: #E8002D;
+    text-shadow: 0 0 20px rgba(232, 0, 45, 0.5);
+}
+
+.logoGold {
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #D4A843 0%, #F5D07A 50%, #D4A843 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link:hover {
+    color: #fff;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, #D4A843, #F5D07A, #D4A843);
+    border-radius: 2px;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 8px rgba(212, 168, 67, 0.8);
+}
+
+.link:hover .underline {
+    width: 100%;
+}
+
+.ctaBtn {
+    text-decoration: none;
+    border: 1px solid rgba(212, 168, 67, 0.6);
+    color: #D4A843;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ctaBtn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--grad-gold);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ctaBtn:hover {
+    color: #000;
+    border-color: #D4A843;
+    box-shadow: 0 0 20px rgba(212, 168, 67, 0.4);
+}
+
+.ctaBtn:hover::before {
+    opacity: 1;
+}
+
+.ctaBtn span {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .links {
+        gap: 1.2rem;
+    }
+
+    .ctaBtn {
+        display: none;
+    }
+}

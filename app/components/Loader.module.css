@@ -1,0 +1,166 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+}
+
+.exit {
+    opacity: 0;
+    transform: scale(1.04);
+    pointer-events: none;
+}
+
+/* Subtle grid lines in background */
+.grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(212, 168, 67, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 168, 67, 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+}
+
+/* Top brand */
+.brand {
+    position: absolute;
+    top: 2.5rem;
+    left: 3rem;
+    display: flex;
+    gap: 0.3rem;
+    align-items: baseline;
+}
+
+.brandRed {
+    font-size: 1.6rem;
+    color: #E8002D;
+    text-shadow: 0 0 20px rgba(232, 0, 45, 0.5);
+}
+
+.brandGold {
+    font-size: 1.6rem;
+    background: linear-gradient(135deg, #D4A843, #F5D07A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Center block */
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    width: min(600px, 88vw);
+}
+
+.label {
+    font-size: 0.6rem;
+    letter-spacing: 0.45em;
+    color: rgba(212, 168, 67, 0.45);
+    text-align: center;
+}
+
+/* The big number */
+.number {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.4rem;
+    line-height: 1;
+}
+
+.pct {
+    font-size: clamp(6rem, 18vw, 13rem);
+    background: linear-gradient(135deg, #D4A843 0%, #F5D07A 40%, #A07830 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    /* slight filter glow */
+    filter: drop-shadow(0 0 40px rgba(212, 168, 67, 0.3));
+    font-variant-numeric: tabular-nums;
+    min-width: 4ch;
+    text-align: right;
+    transition: none;
+    /* RAF handles smoothness */
+}
+
+.sym {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    letter-spacing: 0.1em;
+    color: rgba(212, 168, 67, 0.5);
+    padding-bottom: 1rem;
+}
+
+/* Bar */
+.barWrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.barTrack {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    position: relative;
+    overflow: visible;
+}
+
+.barFill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #A07830, #D4A843, #F5D07A);
+    transition: width 0.04s linear;
+}
+
+.barHead {
+    position: absolute;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #F5D07A;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px 4px rgba(212, 168, 67, 0.7);
+    transition: left 0.04s linear;
+}
+
+.barLabels {
+    display: flex;
+    justify-content: space-between;
+}
+
+.barLabel {
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.15);
+}
+
+/* Status text */
+.sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: rgba(212, 168, 67, 0.35);
+    text-align: center;
+    min-height: 1.5em;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.12);
+}

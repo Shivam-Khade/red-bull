@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Italiana&family=Rajdhani:wght@600;700&display=swap');
+
+:root {
+  --gold: #D4A843;
+  --gold-light: #F5D07A;
+  --gold-dark: #A07830;
+  --silver: #C8CAD0;
+  --black: #000000;
+  --black-deep: #050505;
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(212,168,67,0.15);
+  --text-primary: #FFFFFF;
+  --text-muted: rgba(200,202,208,0.7);
+  --grad-gold: linear-gradient(135deg, #D4A843 0%, #F5D07A 40%, #A07830 100%);
+  --grad-silver: linear-gradient(135deg, #FFFFFF 0%, #C8CAD0 50%, #888 100%);
+  --grad-divider: linear-gradient(90deg, transparent 0%, #D4A843 30%, #F5D07A 50%, #D4A843 70%, transparent 100%);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--black);
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--black);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== TYPOGRAPHY SYSTEM ===== */
+.heading-display {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.heading-serif {
+  font-family: 'Italiana', serif;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.heading-tech {
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.text-gold {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-silver {
+  background: var(--grad-silver);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== GOLD DIVIDER ===== */
+.gold-divider {
+  height: 1px;
+  width: 100%;
+  background: var(--grad-divider);
+  opacity: 0.8;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* ===== SHOCKWAVE KEYFRAME ===== */
+@keyframes shockwave {
+  0%   { transform: translate(0,0); }
+  10%  { transform: translate(-4px, 3px); }
+  20%  { transform: translate(4px, -3px); }
+  30%  { transform: translate(-3px, 4px); }
+  40%  { transform: translate(3px, -2px); }
+  50%  { transform: translate(-2px, 2px); }
+  60%  { transform: translate(2px, -2px); }
+  70%  { transform: translate(-1px, 1px); }
+  80%  { transform: translate(1px, -1px); }
+  90%  { transform: translate(-1px, 0px); }
+  100% { transform: translate(0, 0); }
+}
+
+.shockwave-active {
+  animation: shockwave 0.5s ease-in-out;
+}
+
+/* ===== RIPPLE KEYFRAME ===== */
+@keyframes rippleExpand {
+  0%   { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* ===== GPU-ACCELERATED BASE ===== */
+canvas, img, video {
+  will-change: transform;
+  transform: translateZ(0);
+}

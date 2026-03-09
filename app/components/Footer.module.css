@@ -1,0 +1,236 @@
+.footer {
+    background: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.topBorder {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #D4A843 30%, #F5D07A 50%, #D4A843 70%, transparent);
+}
+
+.grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 4rem;
+    padding: 5rem 3rem 4rem;
+}
+
+/* Brand */
+.brandLogo {
+    display: flex;
+    gap: 0.3rem;
+    align-items: baseline;
+    margin-bottom: 1.2rem;
+}
+
+.logoRed {
+    font-size: 2rem;
+    color: #E8002D;
+    text-shadow: 0 0 20px rgba(232, 0, 45, 0.4);
+}
+
+.logoGold {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #D4A843, #F5D07A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.brandTagline {
+    font-size: 0.85rem;
+    color: rgba(200, 202, 208, 0.5);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    max-width: 280px;
+}
+
+.brandCopy {
+    font-size: 0.65rem;
+    color: rgba(200, 202, 208, 0.25);
+    letter-spacing: 0.05em;
+}
+
+/* Columns */
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.colTitle {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: rgba(212, 168, 67, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.colList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.colLink {
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: rgba(200, 202, 208, 0.5);
+    transition: color 0.3s ease;
+    font-weight: 300;
+}
+
+.colLink:hover {
+    color: #D4A843;
+}
+
+/* Newsletter */
+.newsletterDesc {
+    font-size: 0.8rem;
+    color: rgba(200, 202, 208, 0.45);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.newsletterForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 0.3rem;
+}
+
+.newsletterInput {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 0.6rem 0;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.newsletterInput::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.newsletterInput:focus {
+    border-bottom-color: #D4A843;
+}
+
+.newsletterBtn {
+    background: transparent;
+    border: 1px solid rgba(212, 168, 67, 0.4);
+    color: #D4A843;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+}
+
+.newsletterBtn:hover {
+    background: rgba(212, 168, 67, 0.1);
+    border-color: #D4A843;
+    box-shadow: 0 0 15px rgba(212, 168, 67, 0.2);
+}
+
+/* Bottom Bar */
+.bottomBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    gap: 2rem;
+}
+
+.legal {
+    font-size: 0.65rem;
+    color: rgba(200, 202, 208, 0.25);
+    letter-spacing: 0.05em;
+}
+
+/* Back to Top */
+.backToTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.backToTopTab {
+    display: block;
+    width: 40px;
+    height: 12px;
+    background: linear-gradient(135deg, #D4A843, #F5D07A);
+    clip-path: polygon(15% 100%, 0% 0%, 100% 0%, 85% 100%);
+    transition: box-shadow 0.4s ease;
+}
+
+.backToTop:hover .backToTopTab {
+    box-shadow: 0 -5px 20px rgba(212, 168, 67, 0.6);
+}
+
+.backToTopText {
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    color: rgba(212, 168, 67, 0.6);
+    transition: color 0.3s ease;
+}
+
+.backToTop:hover .backToTopText {
+    color: #D4A843;
+}
+
+/* Nitrogen fog effect */
+.backToTopFog {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 40px;
+    background: radial-gradient(ellipse at center, rgba(212, 168, 67, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    filter: blur(8px);
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.backToTop:hover .backToTopFog {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        padding: 4rem 2rem 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 3rem 1.5rem 2rem;
+    }
+
+    .bottomBar {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+}

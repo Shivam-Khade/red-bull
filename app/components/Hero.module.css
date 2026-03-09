@@ -1,0 +1,228 @@
+/* Section: no height needed — GSAP pin:true creates spacer automatically */
+.section {
+    width: 100%;
+}
+
+/* The full-viewport canvas wrapper that gets pinned */
+.canvasWrap {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    will-change: transform;
+    background: #000;
+}
+
+.canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.vignette {
+    position: absolute;
+    inset: 0;
+    /* Highly aggressive vignette to seamlessly blend frame borders into true black */
+    background: radial-gradient(ellipse at center,
+            transparent 10%,
+            rgba(0, 0, 0, 0.4) 45%,
+            #000 65%,
+            #000 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ===== LOADER ===== */
+.loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.2rem;
+    background: #000;
+    z-index: 10;
+}
+
+.loaderLabel {
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: rgba(212, 168, 67, 0.5);
+}
+
+.loaderBar {
+    width: 220px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.loaderFill {
+    height: 100%;
+    background: linear-gradient(90deg, #D4A843, #F5D07A);
+    box-shadow: 0 0 12px rgba(212, 168, 67, 0.8);
+    transition: width 0.12s ease;
+}
+
+.loaderPct {
+    font-size: 5rem;
+    line-height: 1;
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    /* Row layout to separate text left, hint right */
+    align-items: center;
+    justify-content: space-between;
+    padding: 10vh 5rem 0 5rem;
+    z-index: 5;
+    pointer-events: none;
+    text-align: left;
+}
+
+.heroText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Stack text to the left */
+    gap: 1.5rem;
+    pointer-events: all;
+    max-width: 50%;
+    /* Keep text strictly on the left half */
+}
+
+.eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: rgba(212, 168, 67, 0.6);
+}
+
+.headline {
+    font-size: clamp(4rem, 9vw, 8.5rem);
+    line-height: 0.85;
+}
+
+.headlineGold {
+    display: block;
+    background: linear-gradient(135deg, #D4A843 0%, #F5D07A 40%, #A07830 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 30px rgba(212, 168, 67, 0.5));
+}
+
+.headlineWhite {
+    display: block;
+    color: #fff;
+    text-shadow: 0 0 60px rgba(255, 255, 255, 0.15);
+}
+
+/* Ghost Button */
+.ghostBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: transparent;
+    border: 1px solid rgba(212, 168, 67, 0.45);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 1rem 2.2rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    /* Aligned left with the text */
+    align-self: flex-start;
+}
+
+.ghostBtn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(212, 168, 67, 0.12), rgba(245, 208, 122, 0.12));
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.ghostBtn:hover {
+    border-color: #D4A843;
+    color: #D4A843;
+    box-shadow: 0 0 30px rgba(212, 168, 67, 0.2), inset 0 0 30px rgba(212, 168, 67, 0.05);
+}
+
+.ghostBtn:hover::before {
+    opacity: 1;
+}
+
+.ghostBtnArrow {
+    font-size: 1rem;
+    transition: transform 0.3s;
+}
+
+.ghostBtn:hover .ghostBtnArrow {
+    transform: translateY(3px);
+}
+
+/* Scroll Hint */
+.scrollHint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    pointer-events: none;
+    align-self: flex-end;
+    /* Keep hint nicely offset on the right */
+}
+
+.scrollLine {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(212, 168, 67, 0.8), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scaleY(0.6);
+    }
+}
+
+.scrollText {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: rgba(212, 168, 67, 0.45);
+    writing-mode: vertical-rl;
+}
+
+@media (max-width: 768px) {
+    .overlay {
+        padding: 3rem 1.5rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .headline {
+        font-size: 4rem;
+    }
+
+    .scrollHint {
+        display: none;
+    }
+}
